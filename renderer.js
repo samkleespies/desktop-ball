@@ -138,6 +138,24 @@ function render(currentTime) {
   // Update physics engine with actual frame delta (syncs to display refresh rate)
   Engine.update(engine, delta);
 
+  // Safety check: Force ball back if it escapes bounds (keeps original velocity and bounciness)
+  if (ball.position.x < ballRadius || ball.position.x > screenWidth - ballRadius ||
+      ball.position.y < ballRadius || ball.position.y > availHeight - ballRadius) {
+    // Clamp position
+    const clampedX = Math.max(ballRadius, Math.min(screenWidth - ballRadius, ball.position.x));
+    const clampedY = Math.max(ballRadius, Math.min(availHeight - ballRadius, ball.position.y));
+    Body.setPosition(ball, { x: clampedX, y: clampedY });
+
+    // Reverse and dampen velocity as if it bounced off the wall
+    const velocityX = ball.position.x < ballRadius || ball.position.x > screenWidth - ballRadius
+      ? -ball.velocity.x * 0.8
+      : ball.velocity.x;
+    const velocityY = ball.position.y < ballRadius || ball.position.y > availHeight - ballRadius
+      ? -ball.velocity.y * 0.8
+      : ball.velocity.y;
+    Body.setVelocity(ball, { x: velocityX, y: velocityY });
+  }
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   ctx.save();

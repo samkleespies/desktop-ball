@@ -22,6 +22,7 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.claude/
 
 # Electron
 *.tsbuildinfo

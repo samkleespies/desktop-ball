@@ -23,7 +23,7 @@
       "target": [
         "nsis"
       ],
-      "icon": "icon.png"
+      "icon": "assets/icon.png"
     },
     "nsis": {
       "oneClick": false,
@@ -37,9 +37,10 @@
       "index.html",
       "renderer.js",
       "style.css",
-      "icon-16x16.png",
-      "icon-32x32.png",
-      "icon.png",
+      "assets/icon-16x16.png",
+      "assets/icon-32x32.png",
+      "assets/icon.png",
+      "assets/red-ball.svg",
       "node_modules/**/*"
     ]
   },

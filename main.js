@@ -47,7 +47,7 @@ function createWindow() {
 
 function createTray() {
   // Load the red ball icon for system tray
-  const iconPath = path.join(__dirname, 'icon-16x16.png');
+  const iconPath = path.join(__dirname, 'assets', 'icon-16x16.png');
   const icon = nativeImage.createFromPath(iconPath);
 
   // Set proper size for Windows tray
@@ -74,6 +74,9 @@ function createTray() {
   tray.setToolTip('Desktop Ball');
   tray.setContextMenu(contextMenu);
 }
+
+// Set user data path to avoid cache permission errors
+app.setPath('userData', path.join(app.getPath('appData'), 'desktop-ball'));
 
 app.whenReady().then(createWindow);
 
