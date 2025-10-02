@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Main circle with red gradient -->
+  <defs>
+    <!-- Radial gradient for 3D effect -->
+    <radialGradient id="ballGradient" cx="40%" cy="30%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#ee3333;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#cc0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#800000;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Highlight gradient -->
+    <radialGradient id="highlight" cx="35%" cy="25%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main ball -->
+  <circle cx="256" cy="256" r="240" fill="url(#ballGradient)" filter="url(#shadow)"/>
+  
+  <!-- Highlight for glossy effect -->
+  <ellipse cx="200" cy="180" rx="120" ry="100" fill="url(#highlight)" opacity="0.7"/>
+  
+  <!-- Smaller secondary highlight -->
+  <ellipse cx="180" cy="160" rx="60" ry="50" fill="#ffffff" opacity="0.4"/>
+</svg>

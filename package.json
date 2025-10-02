@@ -1,0 +1,54 @@
+{
+  "name": "desktop-buddy",
+  "version": "1.0.0",
+  "description": "A fun interactive physics ball for your desktop",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win"
+  },
+  "keywords": [
+    "desktop",
+    "physics",
+    "ball",
+    "widget"
+  ],
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.desktop-buddy.app",
+    "productName": "Desktop Ball",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Desktop Ball"
+    },
+    "files": [
+      "main.js",
+      "index.html",
+      "renderer.js",
+      "style.css",
+      "icon-16x16.png",
+      "icon-32x32.png",
+      "icon.png",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "matter-js": "^0.20.0",
+    "sharp": "^0.34.4"
+  },
+  "devDependencies": {
+    "electron": "^38.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}
