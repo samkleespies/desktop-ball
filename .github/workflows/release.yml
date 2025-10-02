@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Rebuild native dependencies
+        run: npm rebuild sharp
+
       - name: Generate 512x512 icon
         run: npm run generate-icon
 
