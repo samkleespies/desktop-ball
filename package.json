@@ -17,7 +17,10 @@
     "ball",
     "widget"
   ],
-  "author": "",
+  "author": {
+    "name": "Sam Kleespies",
+    "email": "sam.kleespies@gmail.com"
+  },
   "license": "ISC",
   "build": {
     "appId": "com.desktop-buddy.app",
