@@ -26,6 +26,7 @@
   "build": {
     "appId": "com.desktop-buddy.app",
     "productName": "Desktop Ball",
+    "publish": null,
     "win": {
       "target": [
         "nsis"
