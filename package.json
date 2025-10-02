@@ -9,7 +9,8 @@
     "build:win": "electron-builder --win",
     "build:mac": "electron-builder --mac",
     "build:linux": "electron-builder --linux",
-    "build:all": "electron-builder --win --mac --linux"
+    "build:all": "electron-builder --win --mac --linux",
+    "generate-icon": "node scripts/convert-svg-to-icon.js"
   },
   "keywords": [
     "desktop",
@@ -35,7 +36,7 @@
       "target": [
         "dmg"
       ],
-      "icon": "assets/icon.png",
+      "icon": "assets/icon-512.png",
       "category": "public.app-category.entertainment"
     },
     "linux": {
@@ -61,6 +62,7 @@
       "assets/icon-16x16.png",
       "assets/icon-32x32.png",
       "assets/icon.png",
+      "assets/icon-512.png",
       "assets/red-ball.svg",
       "node_modules/**/*"
     ]
