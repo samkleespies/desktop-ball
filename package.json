@@ -70,10 +70,13 @@
   },
   "dependencies": {
     "matter-js": "^0.20.0",
-    "sharp": "^0.34.4"
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
-    "electron": "^38.2.0",
-    "electron-builder": "^26.0.12"
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3"
+  },
+  "overrides": {
+    "global-agent": "^4.1.3"
   }
 }
