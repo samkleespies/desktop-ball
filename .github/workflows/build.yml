@@ -1,0 +1,20 @@
+name: Build validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node --check main.js
+      - run: npm run generate-icon
+      - run: npx electron-builder --win --dir --publish never
