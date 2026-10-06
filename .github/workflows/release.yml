@@ -1,3 +1,6 @@
+permissions:
+  contents: read
+
 name: Build and Release
 
 on:
